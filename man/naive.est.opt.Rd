@@ -4,14 +4,14 @@
 \alias{naive.est.opt}
 \title{Naive Estimation of Derivative (Optimized)}
 \usage{
-naive.est.opt(x, y, r, nseg = 35, bdeg = 4, pord = 2, x.grid)
+naive.est.opt(x, y, r, nseg = 35, bdeg = 4, pord = 2, x.grid = NULL)
 }
 \arguments{
 \item{x}{Numeric vector of x values.}
 
 \item{y}{Numeric vector of y values.}
 
-\item{r}{Order of the derivative.}
+\item{r}{Order of the derivative. The value of r must be greater than or equal to 1 since the function already estimates the mean function.}
 
 \item{nseg}{Number of segments.}
 
@@ -19,7 +19,7 @@ naive.est.opt(x, y, r, nseg = 35, bdeg = 4, pord = 2, x.grid)
 
 \item{pord}{Order of the penalty.}
 
-\item{x.grid}{Grid of x values for evaluation.}
+\item{x.grid}{Grid of x values for evaluation. if NULL, it is generated based on the input x values.}
 }
 \value{
 A list containing:
@@ -36,12 +36,38 @@ A list containing:
 \description{
 Estimates the mean and derivative function using optimization to find the optimal smoothing parameter.
 }
+\details{
+The function estimates the mean and derivative function using penalized splines.
+The B-spline basis is constructed based on the input values and the specified parameters.
+The smoothing parameter is optimized using the generalized cross-validation criterion.
+The function returns the estimated function values, derivative values, and other relevant matrices.
+}
 \examples{
-# Example for naive.est.opt
+# Example 1 for naive.est.opt
 x <- seq(0, 1, length.out = 100)
-y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+f <- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
 x.grid <- seq(0, 1, length.out = 200)
-result <- naive.est.opt(x, y, r = 1, nseg = 10, bdeg = 3, pord = 2, x.grid = x.grid)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
+result <- naive.est.opt(x, y, r = 1, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
 plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Naive Estimation")
-points(x, y, col = "red")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+# Example 2 for naive.est.opt
+x <- seq(0, 1, length.out = 100)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- naive.est.opt(x, y, r = 1, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Naive Estimation")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

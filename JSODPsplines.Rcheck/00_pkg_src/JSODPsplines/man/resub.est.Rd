@@ -11,36 +11,59 @@ resub.est(x, y, r, x.grid, nseg, pord, bdeg, tol = 1e-10, ITs = 10)
 
 \item{y}{Numeric vector of y values.}
 
-\item{r}{Order of the derivative.}
+\item{r}{Order of the derivative. The value of r must be greater than or equal to 1 since the function already estimates the mean function.}
 
-\item{x.grid}{Grid of x values for evaluation.}
+\item{x.grid}{Grid of x values for evaluation. If NULL, it is generated based on the input x values.}
 
-\item{nseg}{Number of segments.}
+\item{nseg}{Number of segments. The default is 35.}
 
-\item{pord}{Order of the penalty.}
+\item{pord}{Order of the penalty. The default is 2.}
 
-\item{bdeg}{Degree of the B-spline.}
+\item{bdeg}{Degree of the B-spline. The default is 3.}
 
-\item{tol}{Tolerance for convergence.}
+\item{tol}{Tolerance for convergence. The default is 1e-10. The tolerance is used to determine when the optimization has converged and it takes precedence over the maximum number of iterations.}
 
-\item{ITs}{Maximum number of iterations.}
+\item{ITs}{Maximum number of iterations. The default is 10.}
 }
 \value{
 A list containing:
 \item{x.grid}{Grid of x values for evaluation.}
-\item{fr.hat}{Estimated derivative values.}
-\item{lambda}{Optimal smoothing parameter.}
+\item{f.hat}{Estimated function values using the improved smoothing parameter from iterations.}
+\item{fr.hat}{Estimated derivative values using iterative smoothing parameter.}
+\item{lambda}{Optimal smoothing parameter from iteration.}
 \item{frg.hat}{Estimated derivative values on the grid.}
 }
 \description{
 Performs iterative re-substitution estimation of the derivative function.
 }
+\details{
+The function estimates the mean and derivative function using penalized splines.
+The B-spline basis is constructed based on the input values and the specified parameters. It uses the mean integrated squared error (MISE) to optimize the smoothing parameter.
+This ivolves iteratively updating the estimated derivative function until convergence is reached.
+}
 \examples{
-# Example for resub.est
+# Example 1 for resub.est
 x <- seq(0, 1, length.out = 100)
+f <- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
 y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
 x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
 result <- resub.est(x, y, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
 plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Resubstitution Estimation")
-points(x, y, col = "red")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+#' # Example 2 for resub.est
+x <- seq(0, 1, length.out = 100)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- resub.est(x, y, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Resubstitution Estimation")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+#' @references Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

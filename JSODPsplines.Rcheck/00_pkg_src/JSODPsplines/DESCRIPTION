@@ -19,7 +19,7 @@ Imports: stats
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-05-06 03:50:19 UTC; christopherodoom
+Packaged: 2025-05-06 17:13:55 UTC; christopherodoom
 Author: Christopher Odoom [aut, cre],
   John Staudenmayer [aut]
 Maintainer: Christopher Odoom <odoomchristopher22@gmail.com>

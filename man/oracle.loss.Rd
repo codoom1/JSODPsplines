@@ -41,3 +41,35 @@ The loss function value.
 \description{
 Computes the loss function for oracle estimation.
 }
+\details{
+The function computes the loss function value based on the difference between the estimated derivative and the true derivative.
+It is used in the oracle estimation process to optimize the smoothing parameter.
+}
+\examples{
+# Example for oracle.loss
+x <- seq(0, 1, length.out = 100)
+f <- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
+result <- oracle.loss(lambda = 0.1, x, y, r = 1, fr.grid = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+print(result)
+# Example 2 for oracle.loss
+x <- seq(0, 1, length.out = 100)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- oracle.loss(lambda = 0.1, x, y, r = 1, fr.grid = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+print(result)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
+}
+\seealso{
+\code{\link{pgams}}, \code{\link{naive.est.opt}}, \code{\link{plugin.est}}, \code{\link{resub.est}}
+}

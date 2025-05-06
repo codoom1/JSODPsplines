@@ -13,9 +13,9 @@ Bbase(x, xl = min(x), xr = max(x), nseg = 10, bdeg = 3)
 
 \item{xr}{Right boundary.}
 
-\item{nseg}{Number of segments.}
+\item{nseg}{Number of segments. Deault is 10.}
 
-\item{bdeg}{Degree of the B-spline.}
+\item{bdeg}{Degree of the B-spline. Default is 3.}
 }
 \value{
 A list containing:
@@ -30,9 +30,17 @@ A list containing:
 \description{
 Creates a B-spline basis for a given set of values.
 }
+\details{
+The function generates a B-spline basis matrix for the given input values.
+The basis is constructed using the specified degree and number of segments.
+The knots are generated based on the left and right boundaries and the number of segments.
+}
 \examples{
 # Example for Bbase
 x <- seq(0, 1, length.out = 100)
 result <- Bbase(x, nseg = 10, bdeg = 3)
 matplot(x, result$B, type = "l", lty = 1, main = "B-spline Basis")
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

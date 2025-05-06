@@ -25,6 +25,15 @@ The GCV criterion value.
 \description{
 Computes the GCV criterion for a given smoothing parameter lambda.
 }
+\details{
+The function computes the GCV criterion value based on the residual sum of squares (RSS) and the effective degrees of freedom (EDF).
+The GCV criterion is a measure of the goodness of fit of the model, adjusted for the complexity of the model.
+It is used to select the optimal smoothing parameter by minimizing the GCV value.
+The function uses the fitted values from the penalized spline model to compute the RSS and EDF.
+The GCV criterion is defined as:
+\deqn{GCV(\lambda) = \frac{RSS(\lambda)}{(n - \text{EDF}(\lambda))^2}}
+where \eqn{RSS(\lambda)} is the residual sum of squares and \eqn{\text{EDF}(\lambda)} is the effective degrees of freedom.
+}
 \examples{
 # Example for gcvlambda
 x <- seq(0, 1, length.out = 100)
@@ -32,4 +41,23 @@ y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
 lambda <- 0.1
 result <- gcvlambda(lambda, x, y, nseg = 10, pord = 2, bdeg = 3)
 print(result)
+# Example 2 for gcvlambda
+x <- seq(0, 1, length.out = 100)
+y <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x) + rnorm(100, sd = 0.1)
+lambda <- 0.1
+result <- gcvlambda(lambda, x, y, nseg = 10, pord = 2, bdeg = 3)
+print(result)
+# Example 3 for gcvlambda
+x <- seq(0, 1, length.out = 100)
+y <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x) + rnorm(100, sd = 0.1)
+lambdas <- seq(0, 1, length.out = 10)
+gcv_values <- sapply(lambdas, function(l) gcvlambda(l, x, y, nseg = 10, pord = 2, bdeg = 3))
+plot(lambdas, gcv_values, type = "b", xlab = "Lambda", ylab = "GCV", main = "GCV vs Lambda")
+abline(v = lambdas[which.min(gcv_values)], col = "red", lty = 2)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
+}
+\seealso{
+\code{\link{pgams}}, \code{\link{naive.est.opt}}, \code{\link{plugin.est}}, \code{\link{resub.est}}
 }

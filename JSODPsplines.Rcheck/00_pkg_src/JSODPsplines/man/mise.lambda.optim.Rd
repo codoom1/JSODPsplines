@@ -48,6 +48,14 @@ A list containing:
 \description{
 Optimizes the Mean Integrated Squared Error (MISE) for a given lambda.
 }
+\details{
+The function computes the MISE for a given smoothing parameter lambda.
+It uses the B-spline basis to estimate the function and its derivative.
+The MISE is calculated as the sum of the variance and squared bias components.
+The variance component is based on the estimated smoothing parameter and the noise level.
+The squared bias component is based on the difference between the estimated and true function values.
+The function returns the optimized MISE value along with its components.
+}
 \examples{
 # Example for mise.lambda.optim
 x <- seq(0, 1, length.out = 100)
@@ -57,4 +65,18 @@ sig <- 0.1
 f <- sin(2 * pi * x)
 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, nseg = 10, pord = 2, bdeg = 3, f = f)
 print(result)
+# Example 2 for mise.lambda.optim
+x <- seq(0, 1, length.out = 100)
+y <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x) + rnorm(100, sd = 0.1)
+lambda <- 0.1
+sig <- 0.1
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, nseg = 10, pord = 2, bdeg = 3, f = f)
+print(result)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
+}
+\seealso{
+\code{\link{pgams}}, \code{\link{naive.est.opt}}, \code{\link{plugin.est}}, \code{\link{resub.est}}
 }

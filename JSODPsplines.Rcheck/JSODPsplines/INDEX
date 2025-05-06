@@ -8,4 +8,3 @@ oracle.loss             Oracle Loss Function
 pgams                   Penalized Spline Derivative Estimation
 plugin.est              Plug-in Estimation of Derivative
 resub.est               Iterative Re-substitution Estimation
-tpower                  Truncated Power Function

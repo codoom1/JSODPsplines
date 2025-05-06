@@ -19,8 +19,22 @@ Type 'q()' to quit R.
 > library(JSODPsplines)
 > 
 > test_check("JSODPsplines")
+[1] "Iteration 2 Difference: 0.00110863840229656"
+[1] "Lambda difference: 0.0062300367200151"
+[1] "Iteration 3 Difference: 5.52871962713914e-05"
+[1] "Lambda difference: 0.0003109004162547"
+[1] "Iteration 4 Difference: 2.75696660781158e-06"
+[1] "Lambda difference: 1.55039723580552e-05"
+[1] "Iteration 5 Difference: 1.37479811481295e-07"
+[1] "Lambda difference: 7.73127547426533e-07"
+[1] "Iteration 6 Difference: 6.85520099602543e-09"
+[1] "Lambda difference: 3.855071628589e-08"
+[1] "Iteration 7 Difference: 3.41768277845045e-10"
+[1] "Lambda difference: 1.92195570569709e-09"
+[1] "Iteration 8 Difference: 1.73420634796972e-11"
+[1] "Lambda difference: 9.75185487916974e-11"
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 9 ]
 > 
 > proc.time()
    user  system elapsed 
-  0.541   0.062   0.604 
+  0.462   0.052   0.513 

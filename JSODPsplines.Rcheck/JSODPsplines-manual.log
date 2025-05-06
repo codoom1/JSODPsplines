@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  5 MAY 2025 23:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  6 MAY 2025 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -431,7 +431,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 r/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/te
 xlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 79.
+(Font)              scaled to size 9.0pt on input line 89.
 
 
 [2]
@@ -439,36 +439,145 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 [3]
 
 [4]
-Overfull \hbox (8.21341pt too wide) in paragraph at lines 232--232
+
+[5]
+Overfull \hbox (8.21341pt too wide) in paragraph at lines 300--300
+ []\T1/zi4/m/n/9 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, ns
+eg = 10, pord = 2, bdeg = 3, f = f)[] 
+ []
+
+
+Overfull \hbox (8.21341pt too wide) in paragraph at lines 308--308
  []\T1/zi4/m/n/9 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, ns
 eg = 10, pord = 2, bdeg = 3, f = f)[] 
  []
 
 
 
-[5]
-
 [6]
-Overfull \hbox (117.70728pt too wide) in paragraph at lines 353--353
- []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
-d = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+
+[7]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 381--381
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 393--393
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
  []
 
 
 
-[7]
-
 [8]
+Overfull \hbox (135.70728pt too wide) in paragraph at lines 470--470
+ []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
+d = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+ []
+
+
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 473--473
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+Overfull \hbox (135.70728pt too wide) in paragraph at lines 482--482
+ []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
+d = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+ []
+
+
 
 [9]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 485--485
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
 
-[10] (./Rd2.ind
+
+
+[10]
+Overfull \hbox (104.20728pt too wide) in paragraph at lines 559--559
+ []\T1/zi4/m/n/9 result <- oracle.loss(lambda = 0.1, x, y, r = 1, fr.grid = fpr
+ime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+ []
+
+
+Overfull \hbox (104.20728pt too wide) in paragraph at lines 569--569
+ []\T1/zi4/m/n/9 result <- oracle.loss(lambda = 0.1, x, y, r = 1, fr.grid = fpr
+ime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+ []
+
+
 
 [11]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 646--646
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 6
+47.
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
+File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 647.
+
+
+[12{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.
+enc}]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 660--660
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
 
 
 
-[12
+[13]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 732--732
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 744--744
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+
+[14]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 810--810
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+
+[15]
+Overfull \hbox (80.24101pt too wide) in paragraph at lines 822--822
+ []\T1/zi4/m/n/9 legend("topright", legend = c("Estimated Derivative", "True De
+rivative"), col = c("blue", "green"), lty = 1:2)[] 
+ []
+
+
+Overfull \hbox (195.71954pt too wide) in paragraph at lines 823--823
+ []\T1/zi4/m/n/9 #\TS1/zi4/m/n/9 ' \T1/zi4/m/n/9 @references Eilers, P. H. C. &
+ Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistic
+al Science, 11(2), 89-121.[] 
+ []
+
+(./Rd2.ind
+
+[16]
+
+
+
+[17
 
 
 ]) (./Rd2.aux)
@@ -477,25 +586,30 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
-(rerunfilecheck)             Checksum: 9161B61DF8C5F3B0E71AA28A110B9967;1139.
+(rerunfilecheck)             Checksum: 5419A9321F7FF428F4E520EAB1380952;1062.
  ) 
 Here is how much of TeX's memory you used:
- 10715 strings out of 474662
- 161661 string characters out of 5751110
+ 10765 strings out of 474662
+ 162499 string characters out of 5751110
  557851 words of memory out of 5000000
- 33493 multiletter control sequences out of 15000+600000
- 592209 words of font info for 76 fonts, out of 8000000 for 9000
+ 33517 multiletter control sequences out of 15000+600000
+ 595786 words of font info for 79 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 92i,5n,95p,253b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,5n,95p,253b,735s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/inconsolata/Incon
-solata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/times/
-utmb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
-></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (12 pages, 91891 bytes).
+solata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on Rd2.pdf (17 pages, 140845 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 92 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

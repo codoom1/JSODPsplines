@@ -4,24 +4,22 @@
 \alias{plugin.est}
 \title{Plug-in Estimation of Derivative}
 \usage{
-plugin.est(x, y, r, nseg = 35, pord = 3, bdeg = 4, x.grid, fr = NULL)
+plugin.est(x, y, r, nseg = 35, pord = 3, bdeg = 4, x.grid)
 }
 \arguments{
 \item{x}{Numeric vector of x values.}
 
 \item{y}{Numeric vector of y values.}
 
-\item{r}{Order of the derivative.}
+\item{r}{Order of the derivative. The value of r must be greater than or equal to 1 since the function already estimates the mean function.}
 
-\item{nseg}{Number of segments.}
+\item{nseg}{Number of segments. The default is 35.}
 
-\item{pord}{Order of the penalty.}
+\item{pord}{Order of the penalty.The default is 2.}
 
-\item{bdeg}{Degree of the B-spline.}
+\item{bdeg}{Degree of the B-spline. The default is 3.}
 
-\item{x.grid}{Grid of x values for evaluation.}
-
-\item{fr}{Optional true derivative values.}
+\item{x.grid}{Grid of x values for evaluation. If NULL, it is generated based on the input x values.}
 }
 \value{
 A list containing:
@@ -40,12 +38,36 @@ A list containing:
 \description{
 Performs one-step plug-in estimation of the derivative function.
 }
+\details{
+The function estimates the mean and derivative function using penalized splines.
+The B-spline basis is constructed based on the input values and the specified parameters. It uses the mean integrated squared error (MISE) to optimize the smoothing parameter.
+}
 \examples{
-# Example for plugin.est
+# Example 1 for plugin.est
 x <- seq(0, 1, length.out = 100)
-y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+f <- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
 x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
 result <- plugin.est(x, y, r = 1, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
 plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Plug-in Estimation")
-points(x, y, col = "red")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+#' # Example 2 for plugin.est
+x <- seq(0, 1, length.out = 100)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- plugin.est(x, y, r = 1, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Plug-in Estimation")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

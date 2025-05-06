@@ -21,6 +21,11 @@ A matrix representing the B-spline basis on the grid.
 \description{
 Creates a B-spline basis on a grid.
 }
+\details{
+The function generates a B-spline basis matrix for the given input values on a specified grid.
+The basis is constructed using the specified degree and knot values.
+The grid is defined by the input values and the specified spacing.
+}
 \examples{
 # Example for bbase.grid
 x <- seq(0, 1, length.out = 100)
@@ -29,4 +34,7 @@ knots <- seq(0, 1, length.out = 10)
 deg <- 3
 result <- bbase.grid(x, dx, knots, deg)
 matplot(x, result, type = "l", lty = 1, main = "B-spline Basis on a Grid")
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

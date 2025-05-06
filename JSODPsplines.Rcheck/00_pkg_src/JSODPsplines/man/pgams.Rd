@@ -4,24 +4,24 @@
 \alias{pgams}
 \title{Penalized Spline Derivative Estimation}
 \usage{
-pgams(x, y, lambda = 0.1, r = 0, x.grid, nseg = 35, pord = 2, bdeg = 3)
+pgams(x, y, lambda = 0.1, r = 0, x.grid = NULL, nseg = 35, pord = 2, bdeg = 3)
 }
 \arguments{
 \item{x}{Numeric vector of x values.}
 
 \item{y}{Numeric vector of y values.}
 
-\item{lambda}{Smoothing parameter.}
+\item{lambda}{Smoothing parameter. The default is 0.1.}
 
-\item{r}{Order of the derivative.}
+\item{r}{Order of the derivative. The default is 0 which means estimating the mean function.}
 
-\item{x.grid}{Grid of x values for evaluation.}
+\item{x.grid}{Grid of x values for evaluation. if NULL, it is generated based on the input x values.}
 
-\item{nseg}{Number of segments.}
+\item{nseg}{Number of segments. The default is 35.}
 
-\item{pord}{Order of the penalty.}
+\item{pord}{Order of the penalty. The default is 2.}
 
-\item{bdeg}{Degree of the B-spline.}
+\item{bdeg}{Degree of the B-spline. The default is 3.}
 }
 \value{
 A list containing:
@@ -39,12 +39,41 @@ A list containing:
 \description{
 Estimates the derivative function using penalized splines.
 }
+\details{
+The function estimates the mean and derivative function using penalized splines.
+The B-spline basis is constructed based on the input values and the specified parameters.
+The smoothing parameter is used to control the amount of smoothing applied to the estimated function.
+The function returns the estimated function values, derivative values, and other relevant matrices.
+}
 \examples{
-# Example for pgams
+# Example  1 for pgams
 x <- seq(0, 1, length.out = 100)
-y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+f<- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+points(x, y, col = "red")
 x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
 result <- pgams(x, y, lambda = 0.1, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
 plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Estimated Derivative")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+#' # Example 2 for pgams
+x <- seq(0, 1, length.out = 100)
+set.seed(123)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
 points(x, y, col = "red")
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- pgams(x, y, lambda = 0.1, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Estimated Derivative")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }

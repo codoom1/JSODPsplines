@@ -23,7 +23,7 @@ oracle.est(
 
 \item{y}{Numeric vector of y values.}
 
-\item{r}{Order of the derivative.}
+\item{r}{Order of the derivative. The value of r must be greater than or equal to 1 since the function already estimates the mean function.}
 
 \item{fr.grid}{True derivative values on the grid.}
 
@@ -33,11 +33,12 @@ oracle.est(
 
 \item{bdeg}{Degree of the B-spline.}
 
-\item{x.grid}{Grid of x values for evaluation.}
+\item{x.grid}{Grid of x values for evaluation. If NULL, it is generated based on the input x values.}
 }
 \value{
 A list containing:
 \item{x.grid}{Grid of x values for evaluation.}
+\item{f.hat}{Estimated function values. This uses the oracle smoothing parameter.}
 \item{fr.hat}{Estimated derivative values.}
 \item{lambda}{Optimal smoothing parameter.}
 \item{frg.hat}{Estimated derivative values on the grid.}
@@ -45,13 +46,36 @@ A list containing:
 \description{
 Performs oracle estimation of the derivative function.
 }
+\details{
+The function estimates the derivative using information about the true derivative. It uses the oracle loss function to optimize the smoothing parameter.
+It is assumed that the true derivative is known on the grid. This estimation is useful for evaluating the performance of the method since it provides a benchmark for the estimated derivative.
+}
 \examples{
 # Example for oracle.est
 x <- seq(0, 1, length.out = 100)
-y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+f <- sin(2 * pi * x)
+fprime <- cos(2 * pi * x)*(2 * pi)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
 x.grid <- seq(0, 1, length.out = 200)
-fr.grid <- cos(2 * pi * x.grid)  # True derivative
-result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.grid = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+fprime.grid <- cos(2 * pi * x.grid)*(2 * pi)
+result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.grid = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
 plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Oracle Estimation")
-points(x, y, col = "red")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+# Example 2 for oracle.est
+x <- seq(0, 1, length.out = 100)
+f <- 32 * exp(-8 * (1 - 2 * x)^2) * (1 - 2 * x)
+fprime <- (4096 * x^2 - 4096 * x + 960) * exp(-8 * (1 - 2 * x)^2)
+set.seed(123)
+y <- f + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fprime.grid <- (4096 * x.grid^2 - 4096 * x.grid + 960) * exp(-8 * (1 - 2 * x.grid)^2)
+result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.grid = fprime.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Oracle Estimation")
+lines(x.grid, fprime.grid, col = "green", lty = 2)
+legend("topright", legend = c("Estimated Derivative", "True Derivative"), col = c("blue", "green"), lty = 1:2)
+}
+\references{
+Eilers, P. H. C. & Marx, B. D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 }
