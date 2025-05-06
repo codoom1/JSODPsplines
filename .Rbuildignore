@@ -1,7 +1,16 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.git$
+^\.github$
 ^\.gitignore$
+^README\.Rmd$
 ^README\.md$
 ^LICENSE$
+^LICENSE\.md$
+^JSODPsplines_.*\.tar\.gz$
+^JSODPsplines\.Rcheck$
+^cran-comments\.md$
+^\.Rhistory$
+^\.RData$
+^\.Ruserdata$
 ^\.DS_Store$

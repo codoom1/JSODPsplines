@@ -1,0 +1,76 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# JSODPsplines
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+JSODPsplines provides tools for estimating derivatives of functions using P-splines, featuring the 'resub' method, a novel approach developed to improve derivative estimation.
+
+## Installation
+
+You can install the released version of JSODPsplines from CRAN with:
+
+``` r
+install.packages("JSODPsplines")
+```
+
+And the development version from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("username/JSODPsplines")
+```
+
+## Example
+
+```{r example}
+library(JSODPsplines)
+
+# Basic example
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+
+# Estimate the first derivative using the resubstitution method
+result <- resub.est(x, y, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+
+# Plot the results
+plot(x.grid, result$frg.hat, type = "l", col = "blue", 
+     main = "Estimated First Derivative", xlab = "x", ylab = "f'(x)")
+lines(x.grid, 2*pi*cos(2*pi*x.grid), col = "red", lty = 2)  # True derivative
+legend("topright", legend = c("Estimated", "True"), 
+       col = c("blue", "red"), lty = c(1, 2))
+```
+
+## Features
+
+JSODPsplines includes the following key functions:
+
+- `resub.est()`: The resubstitution method for derivative estimation
+- `pgams()`: Penalized spline derivative estimation
+- `naive.est.opt()`: Naive estimation with optimized smoothing parameter
+- `plugin.est()`: Plug-in estimation of derivative
+- `oracle.est()`: Oracle estimation of derivative (when the true function is known)
+- `gcvlambda()`: Generalized cross-validation criterion for smoothing parameter selection
+
+## Citation
+
+If you use this package, please cite:
+
+```{r, eval=FALSE}
+citation("JSODPsplines")
+```

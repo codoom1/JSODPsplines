@@ -1,13 +1,14 @@
 citHeader("To cite JSODPsplines in publications, please use:")
 
-citEntry(
-  entry = "Article",
+bibentry(
+  bibtype = "Article",
   title = "Resubstitution Method for Derivative Estimation Using P-splines",
-  author = person("Christopher", "Odoom"),
+  author = c(person("Christopher", "Odoom"), person("John", "Staudenmayer")),
   journal = "Journal of Statistical Software",
-  year = 2025,
-  volume = "TBD",
-  pages = "TBD",
-  doi = "TBD",
-  textVersion = "Odoom, C. (2025). Resubstitution Method for Derivative Estimation Using P-splines. Journal of Statistical Software."
+  year = "2025",
+  volume = "X",
+  number = "X",
+  pages = "1-20",
+  doi = "10.XXXX/XXXXX",
+  textVersion = "Odoom, C., & Staudenmayer, J. (2025). Resubstitution Method for Derivative Estimation Using P-splines. Journal of Statistical Software."
 )

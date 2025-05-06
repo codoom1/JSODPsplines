@@ -30,3 +30,9 @@ A list containing:
 \description{
 Creates a B-spline basis for a given set of values.
 }
+\examples{
+# Example for Bbase
+x <- seq(0, 1, length.out = 100)
+result <- Bbase(x, nseg = 10, bdeg = 3)
+matplot(x, result$B, type = "l", lty = 1, main = "B-spline Basis")
+}

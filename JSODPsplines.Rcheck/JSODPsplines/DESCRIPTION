@@ -1,17 +1,26 @@
 Package: JSODPsplines
-Title: Resubstitution Method for Derivative Estimation Using P-splines
+Title: Resubstitution Method for Derivative Estimation Using P-Splines
 Version: 0.1.0
-Authors@R: 
-    person("Christopher Odoom", "John Staudenmayer", , "odoomchristopher22@gmail.com", role = c("aut", "cre"))
-Description: This package provides tools for estimating derivatives of functions using P-splines. Its main feature is the `resub` method, a novel approach developed to improve derivative estimation. The package also includes methods for penalized spline estimation, oracle estimation, and optimization of smoothing parameters using generalized cross-validation (GCV) and Mean Integrated Squared Error (MISE).
+Authors@R: c(
+    person("Christopher", "Odoom", email = "odoomchristopher22@gmail.com", role = c("aut", "cre")),
+    person("John", "Staudenmayer", role = "aut")
+  )
+Description: Tools for estimating derivatives of functions using P-splines. 
+    The main feature is the 'resub' method, a novel approach developed to 
+    improve derivative estimation. The package also includes methods for 
+    penalized spline estimation, oracle estimation, and optimization of 
+    smoothing parameters using generalized cross-validation (GCV) and 
+    Mean Integrated Squared Error (MISE).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Imports: stats
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-05-06 02:47:48 UTC; christopherodoom
-Author: Christopher Odoom John Staudenmayer [aut, cre]
-Maintainer: Christopher Odoom John Staudenmayer <odoomchristopher22@gmail.com>
-Built: R 4.5.0; ; 2025-05-06 02:48:04 UTC; unix
+Packaged: 2025-05-06 03:50:19 UTC; christopherodoom
+Author: Christopher Odoom [aut, cre],
+  John Staudenmayer [aut]
+Maintainer: Christopher Odoom <odoomchristopher22@gmail.com>
+Built: R 4.5.0; ; 2025-05-06 03:50:24 UTC; unix

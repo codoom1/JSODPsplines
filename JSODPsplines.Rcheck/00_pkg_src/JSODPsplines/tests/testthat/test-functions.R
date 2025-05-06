@@ -7,7 +7,7 @@ test_that("tpower works correctly", {
   expect_true(all(result[x > t] > 0))
 })
 
-source(here::here("R", "RegSplineFunctions.R"))
+# No need to source the file, as it's already loaded from the package
 test_that("Bbase creates correct basis", {
   x <- seq(0, 1, length.out = 100)
   nseg <- 10

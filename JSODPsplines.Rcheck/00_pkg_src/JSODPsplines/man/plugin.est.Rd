@@ -40,3 +40,12 @@ A list containing:
 \description{
 Performs one-step plug-in estimation of the derivative function.
 }
+\examples{
+# Example for plugin.est
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+result <- plugin.est(x, y, r = 1, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Plug-in Estimation")
+points(x, y, col = "red")
+}

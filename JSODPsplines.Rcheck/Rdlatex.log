@@ -76,7 +76,8 @@ ef)
 No file Rd2.aux.
 (/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 No file Rd2.toc.
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd)
@@ -86,27 +87,36 @@ texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 [2]
 [3]
 [4]
+Overfull \hbox (8.21341pt too wide) in paragraph at lines 232--232
+ []\T1/zi4/m/n/9 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, ns
+eg = 10, pord = 2, bdeg = 3, f = f)[] 
+
 [5]
 [6]
+Overfull \hbox (117.70728pt too wide) in paragraph at lines 353--353
+ []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
+d = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+
 [7]
 [8]
 [9]
+[10]
 No file Rd2.ind.
 
-[10] (./Rd2.aux)
+[11] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- ) </Users/christopherodoom/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour
-/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2025basic/texmf-dist/fonts/type
-1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025basic/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (10 pages, 83948 bytes).
+ )
+(see the transcript file for additional information)</usr/local/texlive/2025bas
+ic/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/t
+exlive/2025basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
+e/2025basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/202
+5basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basi
+c/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (11 pages, 88905 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (11 entries accepted, 0 rejected).
@@ -189,6 +199,7 @@ ef) (./Rd2.aux)
 (/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (./Rd2.out) (./Rd2.out)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (./Rd2.toc (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd))
@@ -198,27 +209,36 @@ texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 [2]
 [3]
 [4]
+Overfull \hbox (8.21341pt too wide) in paragraph at lines 232--232
+ []\T1/zi4/m/n/9 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, ns
+eg = 10, pord = 2, bdeg = 3, f = f)[] 
+
 [5]
 [6]
+Overfull \hbox (117.70728pt too wide) in paragraph at lines 353--353
+ []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
+d = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+
 [7]
 [8]
-[9] (./Rd2.ind
-[10]
+[9]
+[10] (./Rd2.ind
+[11]
 
-[11]) (./Rd2.aux)
+[12]) (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- ) </Users/christopherodoom/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour
-/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2025basic/texmf-dist/fonts/type
-1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025basic/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (11 pages, 86396 bytes).
+ )
+(see the transcript file for additional information)</usr/local/texlive/2025bas
+ic/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/t
+exlive/2025basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
+e/2025basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/202
+5basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basi
+c/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (12 pages, 91585 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (11 entries accepted, 0 rejected).
@@ -301,6 +321,7 @@ ef) (./Rd2.aux)
 (/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (./Rd2.out) (./Rd2.out)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (./Rd2.toc (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd))
@@ -310,22 +331,31 @@ texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 [2]
 [3]
 [4]
+Overfull \hbox (8.21341pt too wide) in paragraph at lines 232--232
+ []\T1/zi4/m/n/9 result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, ns
+eg = 10, pord = 2, bdeg = 3, f = f)[] 
+
 [5]
 [6]
+Overfull \hbox (117.70728pt too wide) in paragraph at lines 353--353
+ []\T1/zi4/m/n/9 result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.gri
+d = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)[] 
+
 [7]
 [8]
-[9] (./Rd2.ind
-[10]
+[9]
+[10] (./Rd2.ind
+[11]
 
-[11]) (./Rd2.aux) ) </Users/christopherodoom/Library/texlive/2025basic/texmf-va
-r/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2025basic/texm
-f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/
-2025basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025b
-asic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (11 pages, 86589 bytes).
+[12]) (./Rd2.aux) )
+(see the transcript file for additional information)</usr/local/texlive/2025bas
+ic/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/t
+exlive/2025basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
+e/2025basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/202
+5basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basi
+c/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (12 pages, 91891 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘JSODPsplines-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /var/folders/wn/4sm351b900qg_5z1gvp_51vw0000gn/T//RtmpldpGEH/Rd2pdfbe8a5b6cf89f'
+You may want to clean up by 'rm -Rf /var/folders/wn/4sm351b900qg_5z1gvp_51vw0000gn/T//Rtmp8BFoAT/Rd2pdfd7766b988e0e'

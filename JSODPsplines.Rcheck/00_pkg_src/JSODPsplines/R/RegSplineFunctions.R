@@ -1,3 +1,6 @@
+#' @importFrom stats optim chol diff diag gamma outer solve svd t
+#' @importFrom graphics legend lines matplot par plot points
+
 #' Truncated Power Function
 #'
 #' Computes the truncated p-th power function.

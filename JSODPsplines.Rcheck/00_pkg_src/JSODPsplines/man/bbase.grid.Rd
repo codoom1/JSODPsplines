@@ -21,3 +21,12 @@ A matrix representing the B-spline basis on the grid.
 \description{
 Creates a B-spline basis on a grid.
 }
+\examples{
+# Example for bbase.grid
+x <- seq(0, 1, length.out = 100)
+dx <- 0.1
+knots <- seq(0, 1, length.out = 10)
+deg <- 3
+result <- bbase.grid(x, dx, knots, deg)
+matplot(x, result, type = "l", lty = 1, main = "B-spline Basis on a Grid")
+}

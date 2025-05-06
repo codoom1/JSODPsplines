@@ -11,3 +11,5 @@ export(pgams)
 export(plugin.est)
 export(resub.est)
 export(tpower)
+
+importFrom(stats, optim)

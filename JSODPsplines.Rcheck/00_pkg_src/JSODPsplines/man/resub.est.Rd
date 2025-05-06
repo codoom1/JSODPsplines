@@ -35,3 +35,12 @@ A list containing:
 \description{
 Performs iterative re-substitution estimation of the derivative function.
 }
+\examples{
+# Example for resub.est
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+result <- resub.est(x, y, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Resubstitution Estimation")
+points(x, y, col = "red")
+}

@@ -36,3 +36,12 @@ A list containing:
 \description{
 Estimates the mean and derivative function using optimization to find the optimal smoothing parameter.
 }
+\examples{
+# Example for naive.est.opt
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+result <- naive.est.opt(x, y, r = 1, nseg = 10, bdeg = 3, pord = 2, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Naive Estimation")
+points(x, y, col = "red")
+}

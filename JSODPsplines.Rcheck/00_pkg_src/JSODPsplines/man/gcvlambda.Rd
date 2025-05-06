@@ -25,3 +25,11 @@ The GCV criterion value.
 \description{
 Computes the GCV criterion for a given smoothing parameter lambda.
 }
+\examples{
+# Example for gcvlambda
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+lambda <- 0.1
+result <- gcvlambda(lambda, x, y, nseg = 10, pord = 2, bdeg = 3)
+print(result)
+}

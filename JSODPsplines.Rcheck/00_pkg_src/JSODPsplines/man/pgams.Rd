@@ -39,3 +39,12 @@ A list containing:
 \description{
 Estimates the derivative function using penalized splines.
 }
+\examples{
+# Example for pgams
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+result <- pgams(x, y, lambda = 0.1, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Estimated Derivative")
+points(x, y, col = "red")
+}
