@@ -1,0 +1,65 @@
+---
+title: "JSODPsplines Tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{JSODPsplines Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(JSODPsplines)
+```
+
+# Introduction
+
+**JSODPsplines** is an R package that provides tools for estimating derivatives of functions using P-splines. Its main feature is the `resub` method, a novel approach developed to improve derivative estimation.
+
+# Installation
+
+To install the development version from GitHub:
+
+```r
+# install.packages("devtools")
+devtools::install_github("codoom1/JSODPsplines")
+```
+
+# Example Usage
+
+## Resubstitution Estimation
+
+The `resub.est` function implements the iterative re-substitution method for derivative estimation. Below is an example:
+
+```r
+library(JSODPsplines)
+
+# Example data
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+
+# Resubstitution estimation
+result <- resub.est(x, y, r = 1, x.grid = x.grid, nseg = 10, pord = 2, bdeg = 3)
+
+# Plot results
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Resubstitution Estimation")
+points(x, y, col = "red")
+```
+
+# Other Functions
+
+The package also includes the following functions:
+
+- `pgams`: Penalized spline derivative estimation.
+- `naive.est.opt`: Naive estimation of derivatives with optimized smoothing.
+- `plugin.est`: Plug-in estimation of derivatives.
+- `oracle.est`: Oracle estimation of derivatives.
+
+Refer to the package documentation for detailed usage of these functions.

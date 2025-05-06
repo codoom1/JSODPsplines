@@ -1,0 +1,11 @@
+Bbase                   B-spline Basis Function
+bbase.grid              B-spline Basis on a Grid
+gcvlambda               Generalized Cross-Validation Criterion
+mise.lambda.optim       MISE Lambda Optimization
+naive.est.opt           Naive Estimation of Derivative (Optimized)
+oracle.est              Oracle Estimation of Derivative
+oracle.loss             Oracle Loss Function
+pgams                   Penalized Spline Derivative Estimation
+plugin.est              Plug-in Estimation of Derivative
+resub.est               Iterative Re-substitution Estimation
+tpower                  Truncated Power Function
