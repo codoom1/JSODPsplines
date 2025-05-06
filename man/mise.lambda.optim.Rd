@@ -48,3 +48,13 @@ A list containing:
 \description{
 Optimizes the Mean Integrated Squared Error (MISE) for a given lambda.
 }
+\examples{
+# Example for mise.lambda.optim
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+lambda <- 0.1
+sig <- 0.1
+f <- sin(2 * pi * x)
+result <- mise.lambda.optim(lambda, x, y, r = 1, sig = sig, nseg = 10, pord = 2, bdeg = 3, f = f)
+print(result)
+}

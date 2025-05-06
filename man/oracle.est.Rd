@@ -45,3 +45,13 @@ A list containing:
 \description{
 Performs oracle estimation of the derivative function.
 }
+\examples{
+# Example for oracle.est
+x <- seq(0, 1, length.out = 100)
+y <- sin(2 * pi * x) + rnorm(100, sd = 0.1)
+x.grid <- seq(0, 1, length.out = 200)
+fr.grid <- cos(2 * pi * x.grid)  # True derivative
+result <- oracle.est(initial.lambda = 0.1, x, y, r = 1, fr.grid = fr.grid, nseg = 10, pord = 2, bdeg = 3, x.grid = x.grid)
+plot(x.grid, result$frg.hat, type = "l", col = "blue", main = "Oracle Estimation")
+points(x, y, col = "red")
+}

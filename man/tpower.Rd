@@ -19,3 +19,11 @@ Numeric vector of evaluated values.
 \description{
 Computes the truncated p-th power function.
 }
+\examples{
+# Example for tpower
+x <- seq(0, 1, length.out = 100)
+t <- 0.5
+p <- 2
+result <- tpower(x, t, p)
+plot(x, result, type = "l", col = "blue", main = "Truncated Power Function")
+}
